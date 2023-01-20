@@ -1,0 +1,31 @@
+boolean solution(int[] statues) {
+
+        int lenght=statues.length;
+        int grand []=new int[lenght];
+        boolean point=false;
+
+        int min=statues[0];
+
+        for (int foundMin=0;foundMin<lenght;foundMin++){
+            if(statues[foundMin]<min) {min=statues[foundMin];}
+        }
+        int temp=min-1;
+        int successful=0;
+        int deleted=0;
+        for (int counter=0;counter<lenght-1;counter++){
+            if ((statues[counter]<statues[counter+1])&(temp<statues[counter+1])){
+                successful++;
+                System.out.println(statues[counter]+"<"+statues[counter+1] +" & " +temp+"<"+statues[counter+1]);
+
+            }
+            else {System.out.println("!!!"+statues[counter]+"<"+statues[counter+1] +" & " +temp+"<"+statues[counter+1]);
+             deleted++;
+            }
+            temp=statues[counter];}
+        System.out.println("lenght "+lenght+"\n successful "+successful+"\n deleted "+deleted);
+
+        if ((successful+1>=lenght-1)&(deleted<=1)) {return point=true;
+        }
+        else {return point=false;}
+
+    }
