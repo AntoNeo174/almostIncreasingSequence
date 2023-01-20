@@ -1,0 +1,18 @@
+boolean solution(int[] statues) {
+
+        int length= statues.length;
+        boolean point=false;
+        int t=0;
+        int proval=-10000;
+        for (int r=0;r<length-1;r++){
+            if (statues[r]==proval) {t++;}
+            if (statues[r]==statues[r+1]) {t++;}
+            if (statues[r]>statues[r+1]) {t++;
+             proval=statues[r];}
+
+
+        }
+        if (t==1) {return point=true;}
+        else {return point=false;}
+
+    }
